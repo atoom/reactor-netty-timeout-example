@@ -1,0 +1,11 @@
+spring:
+  main:
+    banner-mode: off
+  cloud:
+    gateway:
+      routes:
+        - id: test
+          uri: http://localhost:${wiremock.port:8080}
+          predicates:
+            - Host=**
+
